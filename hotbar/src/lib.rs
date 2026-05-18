@@ -1,3 +1,9 @@
+// v0.4: capscr's plugin runtime arrives in v0.4. The `runtime` feature flips
+// the `Plugin` trait impl + the path dep to `capscr` (Cargo.toml). Standalone
+// builds compile as reference code.
+#![cfg_attr(not(feature = "runtime"), allow(dead_code))]
+
+#[cfg(feature = "runtime")]
 use capscr::plugin::{Plugin, PluginEvent, PluginResponse};
 use serde::{Deserialize, Serialize};
 use std::path::PathBuf;
@@ -622,6 +628,7 @@ impl Default for HotbarPlugin {
     }
 }
 
+#[cfg(feature = "runtime")]
 impl Plugin for HotbarPlugin {
     fn name(&self) -> &str {
         "Hotbar"

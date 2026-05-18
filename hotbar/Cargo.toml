@@ -4,12 +4,21 @@ version = "0.1.0"
 edition = "2021"
 description = "Transparent hotbar overlay plugin for capscr"
 license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["lib"]
+
+[features]
+runtime = []
 
 [dependencies]
-capscr = { path = "../../capscr" }
 serde = { version = "1.0", features = ["derive"] }
 toml = "0.8"
 directories = "5.0"
+
+# v0.4: re-enable when the capscr plugin runtime ships
+# capscr = { path = "../../capscr", optional = true }
 
 [target.'cfg(windows)'.dependencies]
 windows = { version = "0.58", features = [

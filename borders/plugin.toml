@@ -1,0 +1,4 @@
+name = "Borders"
+version = "0.1.0"
+description = "Add customizable borders, drop shadows, and rounded corners to captures."
+enabled = true

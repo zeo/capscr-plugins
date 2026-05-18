@@ -1,0 +1,4 @@
+name = "Sounds"
+version = "0.1.0"
+description = "Play custom sounds on pre-capture, post-capture, post-save, and post-upload events."
+enabled = true

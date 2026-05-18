@@ -1,7 +1,14 @@
+// v0.4: capscr's plugin runtime arrives in v0.4. The `runtime` feature flips
+// the `Plugin` trait impl + the path dep to `capscr` (Cargo.toml). Standalone
+// builds compile as reference code.
+#![cfg_attr(not(feature = "runtime"), allow(dead_code))]
+
+#[cfg(feature = "runtime")]
 use capscr::plugin::{CaptureType, Plugin, PluginEvent, PluginResponse};
 use image::{Rgba, RgbaImage};
 use serde::{Deserialize, Serialize};
 use std::path::PathBuf;
+#[cfg(feature = "runtime")]
 use std::sync::Arc;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -93,6 +100,7 @@ impl BordersPlugin {
         }
     }
 
+    #[cfg(feature = "runtime")]
     fn should_process(&self, mode: &CaptureType) -> bool {
         if !self.config.enabled {
             return false;
@@ -501,6 +509,7 @@ impl Default for BordersPlugin {
     }
 }
 
+#[cfg(feature = "runtime")]
 impl Plugin for BordersPlugin {
     fn name(&self) -> &str {
         "Borders"

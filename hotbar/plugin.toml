@@ -1,0 +1,4 @@
+name = "Hotbar"
+version = "0.1.0"
+description = "Glass-effect floating toolbar for quick capture actions."
+enabled = true

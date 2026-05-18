@@ -4,10 +4,19 @@ version = "0.1.0"
 edition = "2021"
 description = "Customizable sounds plugin for capscr"
 license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["lib"]
+
+[features]
+runtime = []
 
 [dependencies]
-capscr = { path = "../../capscr" }
 serde = { version = "1.0", features = ["derive"] }
 toml = "0.8"
 directories = "5.0"
 rodio = "0.19"
+
+# v0.4: re-enable when the capscr plugin runtime ships
+# capscr = { path = "../../capscr", optional = true }

@@ -4,10 +4,21 @@ version = "0.1.0"
 edition = "2021"
 description = "Image borders plugin for capscr"
 license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["lib"]
+
+[features]
+# Flipped on by the v0.4 plugin runtime in capscr to enable the `Plugin`
+# trait impl. Off by default so the crate compiles standalone today.
+runtime = []
 
 [dependencies]
-capscr = { path = "../../capscr" }
 image = "0.25"
 serde = { version = "1.0", features = ["derive"] }
 toml = "0.8"
 directories = "5.0"
+
+# v0.4: re-enable when the capscr plugin runtime ships
+# capscr = { path = "../../capscr", optional = true }

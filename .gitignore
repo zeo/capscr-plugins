@@ -1,1 +1,6 @@
 /target
+/.DS_Store
+
+# /dist/ is tracked — rot.lt serves the zips from there via submodule include.
+# If the repo ever bloats past tolerance, switch to git-lfs or move to a
+# release-asset pipeline. For now, commit them.

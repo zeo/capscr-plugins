@@ -1,3 +1,11 @@
+// v0.4: capscr's plugin runtime arrives in v0.4. The `runtime` feature flips
+// the `Plugin` trait impl + the path dep to `capscr` (Cargo.toml). With the
+// feature off the crate compiles as plain reference code — no plugin host
+// involvement. Suppress dead-code warnings for runtime-only helpers so the
+// standalone build stays warning-clean.
+#![cfg_attr(not(feature = "runtime"), allow(dead_code))]
+
+#[cfg(feature = "runtime")]
 use capscr::plugin::{CaptureType, Plugin, PluginEvent, PluginResponse};
 use rodio::{Decoder, OutputStream, Sink};
 use serde::{Deserialize, Serialize};
@@ -155,6 +163,7 @@ impl SoundsPlugin {
         }
     }
 
+    #[cfg(feature = "runtime")]
     fn play_sound(&self, entry: &SoundEntry, mode: Option<&CaptureType>) {
         if !self.config.enabled {
             return;
@@ -204,6 +213,7 @@ impl Default for SoundsPlugin {
     }
 }
 
+#[cfg(feature = "runtime")]
 impl Plugin for SoundsPlugin {
     fn name(&self) -> &str {
         "Sounds"

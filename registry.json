@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "updated_unix": 1779138940,
+  "plugins": [
+    {
+      "id": "borders",
+      "name": "Borders",
+      "version": "0.1.0",
+      "description": "Add customizable borders, drop shadows, and rounded corners to captures.",
+      "author": "lintowe",
+      "homepage": "https://rot.lt/work/capscr/plugins#borders",
+      "download_url": "https://rot.lt/capscr/plugins/borders-0.1.0.zip",
+      "sha256": "02a3ede63b8f4d881e38fa5cb2cea3b772ab89a54dff1bc9bc1429387805ca5d",
+      "size_bytes": 966,
+      "tags": [
+        "editor",
+        "post-capture"
+      ],
+      "min_capscr_version": "0.3.29",
+      "license": "MIT"
+    },
+    {
+      "id": "sounds",
+      "name": "Sounds",
+      "version": "0.1.0",
+      "description": "Play custom sounds on pre-capture, post-capture, post-save, and post-upload events.",
+      "author": "lintowe",
+      "homepage": "https://rot.lt/work/capscr/plugins#sounds",
+      "download_url": "https://rot.lt/capscr/plugins/sounds-0.1.0.zip",
+      "sha256": "40df29d6c88189adbfc65550426e2d228a2360735788e9930935a77912b74b3c",
+      "size_bytes": 984,
+      "tags": [
+        "automation",
+        "audio"
+      ],
+      "min_capscr_version": "0.3.29",
+      "license": "MIT"
+    },
+    {
+      "id": "hotbar",
+      "name": "Hotbar",
+      "version": "0.1.0",
+      "description": "Glass-effect floating toolbar for quick capture actions.",
+      "author": "lintowe",
+      "homepage": "https://rot.lt/work/capscr/plugins#hotbar",
+      "download_url": "https://rot.lt/capscr/plugins/hotbar-0.1.0.zip",
+      "sha256": "57404bd49d1a4817e203dc5bc109c70935d17e60b5d233ef31b15f091790d1e9",
+      "size_bytes": 1117,
+      "tags": [
+        "tools",
+        "ui",
+        "windows-only"
+      ],
+      "min_capscr_version": "0.3.29",
+      "license": "MIT"
+    }
+  ]
+}
