@@ -12,6 +12,7 @@ members = [
     "desktop-toast",
     "grayscale",
     "webhook-notify",
+    "downscale",
 ]
 
 # small, fast plugin binaries. wasm plugins are cdylibs built for

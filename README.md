@@ -25,6 +25,7 @@ capscr 0.4 shipped a **WASM plugin runtime** (not the native `Plugin` trait the 
 | `grayscale` | grayscale every capture | on_capture | image:read,modify | 0.5.0 |
 | `borders` | solid border around captures | on_capture | image:read,modify | 0.5.0 |
 | `webhook-notify` | POST uploaded link to a webhook | on_upload_success | fetch | 0.5.0 |
+| `downscale` | shrink captures past a max dimension | on_capture | image:read,modify | 0.5.0 |
 | `sounds` | event sounds | — | (needs an audio host import) | pending |
 | `hotbar` | floating toolbar | — | (needs a UI host surface) | pending |
 

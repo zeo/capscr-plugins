@@ -116,6 +116,10 @@ name = "capscr-desktop-toast"
 version = "0.1.0"
 
 [[package]]
+name = "capscr-downscale"
+version = "0.1.0"
+
+[[package]]
 name = "capscr-grayscale"
 version = "0.1.0"
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_unix": 1779993832,
+  "updated_unix": 1780002967,
   "plugins": [
     {
       "id": "copy-file-path",
@@ -63,6 +63,24 @@
       "download_url": "https://rot.lt/capscr/plugins/grayscale-0.1.0.zip",
       "sha256": "34906a74b1b4274bc380748701a3e9ee3bf662acde12ebc1a50284ba0b35f428",
       "size_bytes": 5080,
+      "tags": [
+        "editor",
+        "post-capture",
+        "filter"
+      ],
+      "min_capscr_version": "0.5.0",
+      "license": "MIT"
+    },
+    {
+      "id": "downscale",
+      "name": "Downscale",
+      "version": "0.1.0",
+      "description": "Shrink captures whose longest side exceeds a configured max dimension.",
+      "author": "lintowe",
+      "homepage": "https://rot.lt/work/capscr/plugins#downscale",
+      "download_url": "https://rot.lt/capscr/plugins/downscale-0.1.0.zip",
+      "sha256": "5dc6d88d3af48d53602ea1c917a5e1684af86623610cde9acd015549f86a7353",
+      "size_bytes": 7424,
       "tags": [
         "editor",
         "post-capture",

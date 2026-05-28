@@ -1,0 +1,10 @@
+[package]
+name = "capscr-downscale"
+version = "0.1.0"
+edition = "2021"
+description = "Downscale captures larger than a configured max dimension"
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]

@@ -1,0 +1,18 @@
+enabled = true
+
+[plugin]
+id = "downscale"
+name = "Downscale"
+version = "0.1.0"
+author = "lintowe"
+description = "Shrink captures whose longest side exceeds a configured max dimension."
+
+[runtime]
+type = "wasm"
+file = "plugin.wasm"
+
+[hooks]
+on_capture = "capscr_on_capture"
+
+[capabilities]
+image = ["read", "modify"]
