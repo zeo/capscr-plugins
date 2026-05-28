@@ -56,7 +56,18 @@ rustup target add wasm32-unknown-unknown
 node scripts/build-zips.mjs
 ```
 
-Then commit the updated `registry.json` + `dist/*.zip`, push, and the rot.lt deploy step publishes the registry JSON and zips under `https://rot.lt/capscr/`.
+Then commit the updated `registry.json` + `dist/*.zip` and push. This repo is the
+**canonical source of truth**, but it is *not* consumed directly by the live site
+— there is no submodule. The website (rot.lt, a separate SvelteKit repo) serves
+the marketplace and must be updated to match each publish:
+
+- the zips are **vendored** (copied) into `rot.lt/static/capscr/plugins/`, and
+- `https://rot.lt/capscr/registry.json` is **generated** from `rot.lt/src/lib/data/plugins.ts`
+  (id/version/download_url/sha256/size_bytes mirrored from this repo's `registry.json`).
+
+So a push here does **not** auto-publish. After pushing, hand off to whoever
+maintains rot.lt (e.g. "publish capscr-plugins @ \<sha\>") to copy the new zips,
+update `plugins.ts`, and deploy.
 
 New `sha256`/`size_bytes` start empty in `registry.json`; `build-zips.mjs` fills them from the actual zip bytes.
 
