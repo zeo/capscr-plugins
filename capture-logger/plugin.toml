@@ -4,7 +4,7 @@ enabled = true
 id = "capture-logger"
 name = "Capture Logger"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "Log each saved capture and successful upload to capscr's log."
 
 [runtime]

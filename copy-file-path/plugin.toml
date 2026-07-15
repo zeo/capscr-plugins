@@ -4,7 +4,7 @@ enabled = true
 id = "copy-file-path"
 name = "Copy File Path"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "Copy the saved capture's file path to the clipboard."
 
 [runtime]

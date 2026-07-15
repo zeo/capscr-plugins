@@ -1,12 +1,12 @@
 # capscr-plugins
 
-Canonical registry + source-of-truth for the [capscr](https://github.com/lintowe/capscr) plugin marketplace.
+Canonical registry + source-of-truth for the [capscr](https://github.com/zeo/capscr) plugin marketplace.
 
 `registry.json` at the repo root is what `https://rot.lt/capscr/registry.json` serves. The in-app Marketplace tab fetches it on demand. Plugin zips referenced by `download_url` are built from this repo and uploaded to `https://rot.lt/capscr/plugins/<id>-<version>.zip`.
 
 ## the runtime that shipped
 
-capscr 0.4 shipped a **WASM plugin runtime** (not the native `Plugin` trait the earliest drafts here assumed). A plugin is a `cdylib` compiled to `wasm32-unknown-unknown` that exports a small C ABI; the host loads `plugin.wasm`, calls hook exports, and grants capability-gated host imports. The full ABI is in the capscr repo at [`docs/plugin-runtime.md`](https://github.com/lintowe/capscr/blob/master/docs/plugin-runtime.md). In short:
+capscr 0.4 shipped a **WASM plugin runtime** (not the native `Plugin` trait the earliest drafts here assumed). A plugin is a `cdylib` compiled to `wasm32-unknown-unknown` that exports a small C ABI; the host loads `plugin.wasm`, calls hook exports, and grants capability-gated host imports. The full ABI is in the capscr repo at [`docs/plugin-runtime.md`](https://github.com/zeo/capscr/blob/master/docs/plugin-runtime.md). In short:
 
 - export `capscr_alloc(size: i32) -> i32` (host writes hook payloads there) and `memory`
 - export hooks: `capscr_on_capture_saved(ptr,len)`, `capscr_on_upload_success(ptr,len)`, and/or `capscr_on_capture(ptr,len) -> i64` (image-blob, capscr 0.5+)
@@ -74,7 +74,7 @@ New `sha256`/`size_bytes` start empty in `registry.json`; `build-zips.mjs` fills
 
 ## writing a plugin
 
-Use the dependency-free plugins here as templates — `grayscale` is the simplest per-pixel image filter, `copy-file-path` the simplest event forwarder. Each plugin is a `cdylib` gated with `#![cfg(target_arch = "wasm32")]` so a host `cargo build` of the workspace stays green. See [`docs/plugin-runtime.md`](https://github.com/lintowe/capscr/blob/master/docs/plugin-runtime.md) for the wire format and the worked Rust example.
+Use the dependency-free plugins here as templates — `grayscale` is the simplest per-pixel image filter, `copy-file-path` the simplest event forwarder. Each plugin is a `cdylib` gated with `#![cfg(target_arch = "wasm32")]` so a host `cargo build` of the workspace stays green. See [`docs/plugin-runtime.md`](https://github.com/zeo/capscr/blob/master/docs/plugin-runtime.md) for the wire format and the worked Rust example.
 
 ## license
 

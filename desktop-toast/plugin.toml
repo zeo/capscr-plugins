@@ -4,7 +4,7 @@ enabled = true
 id = "desktop-toast"
 name = "Desktop Toast"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "Show a desktop notification with the link after a successful upload."
 
 [runtime]

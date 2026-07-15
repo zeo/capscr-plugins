@@ -4,7 +4,7 @@ enabled = true
 id = "downscale"
 name = "Downscale"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "Shrink captures whose longest side exceeds a configured max dimension."
 
 [runtime]

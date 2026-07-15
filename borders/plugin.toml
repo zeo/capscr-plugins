@@ -4,7 +4,7 @@ enabled = true
 id = "borders"
 name = "Borders"
 version = "0.2.0"
-author = "lintowe"
+author = "zeo"
 description = "Add a solid border around captures."
 
 [runtime]

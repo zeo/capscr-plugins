@@ -4,7 +4,7 @@ enabled = true
 id = "grayscale"
 name = "Grayscale"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "Convert every capture to grayscale before it's saved, copied, or uploaded."
 
 [runtime]

@@ -4,7 +4,7 @@ enabled = true
 id = "webhook-notify"
 name = "Webhook Notify"
 version = "0.1.0"
-author = "lintowe"
+author = "zeo"
 description = "POST the uploaded link to a Discord/Slack-compatible webhook."
 
 [runtime]
